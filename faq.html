@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>NTUB TICKET 問與答</title>
+    </head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .header {
+            background-color: #222;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header .logo a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 24px;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .faq-page {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-header h1 {
+            text-align: center;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        .faq-header p {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .faq-content .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            padding: 15px;
+            text-align: left;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .faq-answer {
+            display: none;
+            margin-top: 10px;
+            background: #f1f1f1;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #333;
+        }
+        /* Luxury Footer */
+        .luxury-footer {
+            background-color: #1b1b1b;
+            color: #ffffff;
+            padding: 50px 20px;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #333;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+
+        .brand-section {
+            flex: 1;
+        }
+
+        .brand-logo {
+            font-size: 36px;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        .brand-slogan {
+            font-size: 16px;
+            margin-top: 10px;
+            color: #b5b5b5;
+        }
+
+        .newsletter-section {
+            flex: 1;
+            text-align: center;
+        }
+
+        .newsletter-input {
+            width: 60%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 25px;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .newsletter-btn {
+            background-color: #ffd700;
+            color: #1b1b1b;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-left: 10px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .newsletter-btn:hover {
+            background-color: #f4c900;
+        }
+
+        .footer-middle {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .link-section,
+        .contact-section,
+        .social-section {
+            flex: 1;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .link-section h3,
+        .contact-section h3,
+        .social-section h3 {
+            color: #ffd700;
+            margin-bottom: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .link-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .link-section li {
+            margin: 10px 0;
+        }
+
+        .link-section a {
+            color: #b5b5b5;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .link-section a:hover {
+            color: #ffd700;
+        }
+
+        .contact-section a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+        }
+
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons a:hover img {
+            transform: scale(1.2);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 14px;
+            color: #b5b5b5;
+        }
+
+        .footer-bottom a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <body>
+        <header class="header">
+            <div class="logo">
+                <a href="./ticket.html">NTUB TICKET</a>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#">節目資訊</a></li>
+                    <li><a href="./faq.html">問與答</a></li>
+                    <li><a href="#">聯絡我們</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="faq-page">
+            <section class="faq-header">
+                <h1>常見問題</h1>
+                <p>我們收集了常見問題及解答，幫助您快速找到所需資訊。</p>
+            </section>
+
+            <section class="faq-content">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        我如何購買演唱會門票？
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            您可以透過我們的網站註冊會員並登入後，前往節目資訊頁選擇演出，點擊「購票」進行購買。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        如果我無法參加活動，是否可以退票？
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            票券一經售出概不退換，請確認活動時間和地點後再進行購票。如需更多協助，請聯絡客服。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        活動當天需要攜帶什麼？
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            請攜帶有效證件與電子票券或列印出的票券，並提前到達場地避免延誤。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        可以幫朋友代購票券嗎？
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            可以，請確保代購的票券資訊正確，並在活動當天提醒朋友攜帶相關證件或授權書。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        門票付款方式有哪些？
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            我們接受多種付款方式，包括信用卡、行動支付 (如 Apple
+                            Pay) 及線上銀行轉帳。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        活動是否提供無障礙服務？
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            是的，我們的場地均提供無障礙進出與座位選項，購票時請選擇無障礙專區，或聯繫客服獲取更多協助。
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="luxury-footer">
+            <div class="footer-top">
+                <div class="brand-section">
+                    <h1 class="brand-logo">NTUB TICKET</h1>
+                    <p class="brand-slogan">
+                        Experience the best of live entertainment, redefined.
+                    </p>
+                </div>
+                <div class="newsletter-section">
+                    <h3>訂閱電子報</h3>
+                    <p>即刻訂閱，掌握最新活動資訊與專屬優惠！</p>
+                    <form action="#">
+                        <input
+                            type="email"
+                            placeholder="輸入您的電子郵件"
+                            class="newsletter-input"
+                            required
+                        />
+                        <button type="submit" class="newsletter-btn">
+                            訂閱
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-middle">
+                <div class="link-section">
+                    <h3>快速連結</h3>
+                    <ul>
+                        <li><a href="./events.html">節目資訊</a></li>
+                        <li><a href="./faq.html">問與答</a></li>
+                        <li><a href="./contact.html">聯絡我們</a></li>
+                        <li><a href="./about.html">關於我們</a></li>
+                    </ul>
+                </div>
+                <div class="contact-section">
+                    <h3>聯絡我們</h3>
+                    <p>客服專線：+886 (02) 1234-5678</p>
+                    <p>
+                        電子郵件：<a href="mailto:support@ntubticket.com"
+                            >support@ntubticket.com</a
+                        >
+                    </p>
+                    <p>客服時間：週一至週五 10:00-18:00</p>
+                </div>
+                <div class="social-section">
+                    <h3>追蹤我們</h3>
+                    <div class="social-icons">
+                        <a href="https://facebook.com" target="_blank">
+                            <img src="./img/fb.png" alt="Facebook" />
+                        </a>
+                        <a href="https://instagram.com" target="_blank">
+                            <img src="./img/ig.png" alt="Instagram" />
+                        </a>
+                        <a href="https://x.com" target="_blank">
+                            <img src="./img/twitter.png" alt="Twitter" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>
+                    &copy; 2024 NTUB TICKET. All Rights Reserved. | Privacy
+                    Policy | Terms of Service
+                </p>
+            </div>
+        </footer>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const questions = document.querySelectorAll('.faq-question');
+
+                questions.forEach((question) => {
+                    question.addEventListener('click', () => {
+                        const isExpanded =
+                            question.getAttribute('aria-expanded') === 'true';
+                        question.setAttribute('aria-expanded', !isExpanded);
+
+                        const answer = question.nextElementSibling;
+                        if (!isExpanded) {
+                            answer.style.display = 'block';
+                        } else {
+                            answer.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
